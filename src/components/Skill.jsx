@@ -1,34 +1,67 @@
-import React ,{ useState, useEffect } from 'react'
 
+
+import React, { useState, useEffect, useRef } from 'react';
 
 const Skill = ({ name, percentage }) => {
+  const [isAnimated, setIsAnimated] = useState(false);
   const [currentPercentage, setCurrentPercentage] = useState(0);
+  const skillRef = useRef(null);
+
+  const animateOnScroll = (entries) => {
+    const [entry] = entries;
+    if (entry.isIntersecting && !isAnimated) {
+      setIsAnimated(true);
+    } else if (!entry.isIntersecting && isAnimated) {
+      setIsAnimated(false);
+      setCurrentPercentage(0); 
+    }
+  };
 
   useEffect(() => {
-    const animationDuration = 1000; 
-    const startTime = Date.now();
+    const observer = new IntersectionObserver(animateOnScroll, {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5, 
+    });
 
-    const updatePercentage = () => {
-      const elapsedTime = Date.now() - startTime;
-      if (elapsedTime < animationDuration) {
-        const progress = (elapsedTime / animationDuration) * percentage;
-        setCurrentPercentage(progress);
-        requestAnimationFrame(updatePercentage);
-      } else {
-        setCurrentPercentage(percentage);
+    if (skillRef.current) {
+      observer.observe(skillRef.current);
+    }
+
+    return () => {
+      if (skillRef.current) {
+        observer.unobserve(skillRef.current);
       }
     };
+  }, []);
 
-    updatePercentage();
-  }, [percentage]);
+  useEffect(() => {
+    if (isAnimated) {
+      const animationDuration = 1000; 
+      const startTime = Date.now();
 
-  const strokeWidth = 8; // Adjust the stroke width as needed
-  const radius = 40; // Radius of the circle
-  const circumference = 2 * Math.PI * radius; // Circumference of the circle
-  const progress = ((100 - currentPercentage) / 100) * circumference; // Calculate the progress based on currentPercentage
+      const updatePercentage = () => {
+        const elapsedTime = Date.now() - startTime;
+        if (elapsedTime < animationDuration) {
+          const progress = (elapsedTime / animationDuration) * percentage;
+          setCurrentPercentage(progress);
+          requestAnimationFrame(updatePercentage);
+        } else {
+          setCurrentPercentage(percentage);
+        }
+      };
+
+      updatePercentage();
+    }
+  }, [isAnimated, percentage]);
+
+  const strokeWidth = 8; 
+  const radius = 48; 
+  const circumference = 2 * Math.PI * radius; 
+  const progress = ((100 - currentPercentage) / 100) * circumference; 
 
   return (
-    <div className="skill-card">
+    <div className="skill-card" ref={skillRef}>
       <div className="skill-name">{name}</div>
       <svg className="skill-svg" width="120" height="120">
         <circle
@@ -52,4 +85,4 @@ const Skill = ({ name, percentage }) => {
   );
 }
 
-export default Skill
+export default Skill;
