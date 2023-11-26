@@ -1,10 +1,11 @@
 import React from 'react'
-
+import image from '../assets/profile.jpg'
 const Hero = () => {
+
   return (
     <section id='hero'>
         <div>
-            <img src="src/assets/profile.jpg" alt="profile" className="profile-img"/>
+            <img src={image} alt="profile" className="profile-img"/>
         </div>
         <div>
         <h1 class="hover-effect">
