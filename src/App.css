@@ -106,8 +106,8 @@ body{
   height: 60px;
   border-radius: 50%;
   position: fixed;
-  top: 25px;
-  left: 25px;
+  top: 22px;
+  left: 26px;
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -290,12 +290,27 @@ section{
     color: var(--color-secondary);
 }
 
-.projects{
+.card-item{
+  text-align: -webkit-center;
+}
+
+.slick-slider{
+  display: flex !important;
+  align-items: center !important;
+  width: auto; /* Allow the container to adjust its width based on the card size */
+  display: inline-block; /* Make the container fit the width of the cards */
   text-align: center;
-  display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 60px;
+}
+
+.prev,.next{
+  height: 70px;
+  /* width: 50px; */
+  border-radius: 50%;
+}
+
+.prev svg,.next svg{
+  height: 2.2em;
+  width: 2.2em
 }
 
 /* PortfolioCard */
@@ -310,6 +325,11 @@ section{
   width:500px;
   height: 450px;
   background-color: var(--color-secondary);
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .portfolio-card:hover {
@@ -319,8 +339,8 @@ section{
 }
 
 .portfolio-img {
-  width: 300px;
-  height: auto;
+  width: 90%;
+  height: 58%;
   margin: 5px 0;
 
 }
@@ -342,6 +362,15 @@ section{
   color: var(--color-white);
   border-radius: 4px;
   transition: background-color 0.3s ease;
+  margin:0 20px;
+}
+
+.portfolio-content a.live{
+  background-color: rgb(41, 45, 157);
+}
+
+.portfolio-content a.live:hover{
+  background-color: rgb(56, 59, 137);
 }
 
 .portfolio-content a:hover {
