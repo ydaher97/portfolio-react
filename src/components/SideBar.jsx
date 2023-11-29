@@ -36,7 +36,7 @@ const SideBar = () => {
             <a href="#contact"  onClick={()=> setOpen((prev) => !prev)}>Contact</a>
             </div>
         </motion.div>
-        <button onClick={()=> setOpen((prev) => !prev)}>
+        <button onClick={()=> setOpen((prev) => !prev)} className='nav-btn'>
             <GiHamburgerMenu />
         </button>
     </motion.div>

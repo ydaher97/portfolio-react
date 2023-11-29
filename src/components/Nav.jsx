@@ -9,10 +9,9 @@ const Nav = () => {
    <nav className='navbar'>
     <SideBar/>
     <div className='wrapper'>
-      {/* <span>yazeed dev</span> */}
       <div className="social">
         <a href="https://github.com/ydaher97"><FaGithub/></a>
-        <a href=""><FaLinkedin/></a>
+        <a href="https://www.linkedin.com/in/yazeed-daher/"><FaLinkedin/></a>
       </div>
     </div>
    </nav>

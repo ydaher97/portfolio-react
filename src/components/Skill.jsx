@@ -21,7 +21,7 @@ const Skill = ({ name, percentage }) => {
     const observer = new IntersectionObserver(animateOnScroll, {
       root: null,
       rootMargin: '0px',
-      threshold: 0.5, 
+      threshold: 1, 
     });
 
     if (skillRef.current) {
@@ -55,7 +55,7 @@ const Skill = ({ name, percentage }) => {
     }
   }, [isAnimated, percentage]);
 
-  const strokeWidth = 8; 
+  const strokeWidth = 10; 
   const radius = 48; 
   const circumference = 2 * Math.PI * radius; 
   const progress = ((100 - currentPercentage) / 100) * circumference; 
