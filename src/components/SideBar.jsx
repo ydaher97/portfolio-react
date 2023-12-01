@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { GiHamburgerMenu } from "react-icons/gi";
 import { motion } from 'framer-motion'
+import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 
 const SideBar = () => {
     const [open, setOpen] = useState(false)
@@ -27,19 +28,23 @@ const SideBar = () => {
     // const items = ["hero", "about", "portfolio", "contact"]
 
   return (
-    <motion.div className='side-list' animate={open ? "open" : "closed"}>
-        <motion.div className="bg" variants={variants}>
-            <div className='links'>
-            <a href="#hero" onClick={()=> setOpen((prev) => !prev)}>Home</a>
-             <a href="#about"  onClick={()=> setOpen((prev) => !prev)}>About</a>
-            <a href="#portfolio"  onClick={()=> setOpen((prev) => !prev)}>Portfolio</a>
-            <a href="#contact"  onClick={()=> setOpen((prev) => !prev)}>Contact</a>
-            </div>
-        </motion.div>
-        <button onClick={()=> setOpen((prev) => !prev)} className='nav-btn'>
-            <GiHamburgerMenu />
-        </button>
-    </motion.div>
+  
+            <motion.div className='side-list' animate={open ? "open" : "closed"}>
+                <motion.div className="bg" variants={variants}>
+                    <div className='links'>
+                    <a href="#hero" onClick={()=> setOpen((prev) => !prev)}>Home</a>
+                    <a href="#about"  onClick={()=> setOpen((prev) => !prev)}>About</a>
+                    <a href="#portfolio"  onClick={()=> setOpen((prev) => !prev)}>Portfolio</a>
+                    <a href="#contact"  onClick={()=> setOpen((prev) => !prev)}>Contact</a>
+                    </div>
+                </motion.div>
+                
+                <button onClick={()=> setOpen((prev) => !prev)} className='nav-btn'>
+                    <GiHamburgerMenu />
+                </button>
+                
+            </motion.div>
+     
   )
 }
 

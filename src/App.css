@@ -37,8 +37,9 @@ body{
 
 .navbar{
   height: 100px;
-  scroll-snap-align: center;
+  /* scroll-snap-align: center; */
   background-color: var(--color-primary);
+  
 
 }
 
@@ -69,7 +70,13 @@ body{
   height: 2em;
   width: 2em;
   color: var(--color-green-1);
+  z-index: 999;
 
+}
+
+.sticky-bar{
+  width: 10% !important;
+  height: 720px !important;
 }
 
 .social svg:hover{
@@ -204,8 +211,9 @@ body{
 
 section{
   height: 100vh;
-  scroll-snap-align: center;
+  /* scroll-snap-align: center; */
   padding:3em 10em;
+  
 }
 
 #hero{
@@ -303,7 +311,7 @@ section{
   }
 
   section{
-    padding: 1em 3em;
+    padding: 1em 2em;
   }
 
   #contact{

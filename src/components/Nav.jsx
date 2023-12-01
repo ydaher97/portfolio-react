@@ -7,7 +7,7 @@ const Nav = () => {
   return (
    <>
    <nav className='navbar'>
-    <SideBar/>
+    {/* <SideBar/> */}
     <div className='wrapper'>
       <div className="social">
         <a href="https://github.com/ydaher97"><FaGithub/></a>
