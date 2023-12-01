@@ -130,6 +130,42 @@ body{
   font-size: 40px;
   text-decoration: none;
   color: var(--color-green-1);
+  
+  display: block;
+            position: relative; 
+}
+
+.links a::before,.links a::after {
+  content: "";
+  position: absolute;
+ 
+  height: 2px;
+  background-color: #fff;
+  transition:0.6s ease;
+}
+
+.links a::before{
+  transform-origin: left;
+  left: 0;
+  right: 0;
+  transform: scaleX(0); 
+
+}
+
+.links a::after{
+  transform-origin:right;
+  transform: scaleX(0); 
+  top: 50px;
+  right: 0;
+}
+
+.links a:hover::before  {
+  transform: scaleX(1); 
+}
+
+.links a:hover::after {
+  transform: scaleX(1); 
+  width: 100%;
 }
  /* nav {
   background-color: #333;
@@ -277,6 +313,29 @@ section{
 
   .contact-form{
     width: 23em
+  }
+
+    
+  .prev,.next{
+  display:none
+  }
+
+  .portfolio-card{
+    width: 294px !important;
+    height: 439px !important;
+  }
+
+  .profile-img {
+    width: 92% !important;
+    height: 50% !important;
+  }
+
+  .portfolio-content a{
+    margin: 10px !important;
+  }
+
+  #contact{
+    height: 80vh !important;
   }
 }
 
