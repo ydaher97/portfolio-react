@@ -212,7 +212,7 @@ body{
 section{
   height: 100vh;
   /* scroll-snap-align: center; */
-  padding:3em 10em;
+  padding:3em 9em;
   
 }
 
@@ -224,8 +224,8 @@ section{
   border-radius: 50%;
   filter: grayscale(100%);
   transition: all 0.6s ease-in-out; 
-  width: 200px;
-  height: 200px;
+  width: 230px;
+  height: 230px;
   transform: scale(1);
 
 }
@@ -238,7 +238,7 @@ section{
 }
 
 .hover-effect {
-  font-size: 32px; 
+  font-size: 40px; 
   cursor: pointer;
 }
 
@@ -248,8 +248,12 @@ section{
 }
 
 .hover-effect span:hover {
-  font-size: 40px;
+  font-size: 50px;
   color: var(--color-green-1); 
+}
+
+.text p{
+  font-size: 32px;
 }
 
 
@@ -344,6 +348,11 @@ section{
 
   #contact{
     height: 80vh !important;
+  }
+
+  .profile-img {
+    width: 200px;
+    height: 200px;
   }
 }
 

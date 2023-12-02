@@ -9,7 +9,7 @@ const Hero = () => {
         <div>
             <img src={image} alt="profile" className="profile-img"/>
         </div>
-        <div>
+        <div className='text'>
         <h1 class="hover-effect">
           <span class="animate__animated animate__backInDown ">H</span>
           <span class="animate__animated animate__backInLeft">E</span>

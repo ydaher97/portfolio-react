@@ -6,7 +6,7 @@ import Portfolio from './components/Portfolio'
 import Contact from './components/contact'
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import SideBar from './components/SideBar'
-
+import Background from './assets/css-pattern-by-magicpattern.png'
 
 function App() {
 
@@ -21,7 +21,7 @@ function App() {
         <ParallaxLayer sticky={{start:0, end: 2.9}} className='sticky-bar'>
           <SideBar/>
         </ParallaxLayer>
-     <ParallaxLayer offset={0.3} speed={0.1}>
+     <ParallaxLayer offset={0.13} speed={0.5} factor={5} style={{backgroundImage:`url(${Background})`}}>
         <Hero />
       </ParallaxLayer>
 
