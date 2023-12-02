@@ -354,6 +354,10 @@ section{
     width: 200px;
     height: 200px;
   }
+
+  #portfolio{
+    height: 90vh;
+  }
 }
 
 
@@ -362,9 +366,10 @@ section{
 
 #portfolio{
     text-align: center;
-    margin-bottom: 200px;
+    /* margin-bottom: 100px; */
     font-weight: bold;
     color: var(--color-secondary);
+    
 }
 
 .card-item{
@@ -503,6 +508,10 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+
+}
+ .submit{
+  width: 100% !important;
 }
 
 button:hover {

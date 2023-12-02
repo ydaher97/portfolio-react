@@ -12,16 +12,16 @@ function App() {
 
   return (
     <>
-     <Parallax pages={3.9}>
+     <Parallax pages={3.5}>
       <ParallaxLayer >
      
         <Nav />
         </ParallaxLayer>
 
-        <ParallaxLayer sticky={{start:0, end: 2.9}} className='sticky-bar'>
+        <ParallaxLayer sticky={{start:0, end: 2.4}} className='sticky-bar'>
           <SideBar/>
         </ParallaxLayer>
-     <ParallaxLayer offset={0.13} speed={0.5} factor={5} style={{backgroundImage:`url(${Background})`}}>
+     <ParallaxLayer offset={0.13} speed={0.5} factor={4} style={{backgroundImage:`url(${Background})`}}>
         <Hero />
       </ParallaxLayer>
 
@@ -33,7 +33,7 @@ function App() {
         <Portfolio />
       </ParallaxLayer>
 
-      <ParallaxLayer offset={3} speed={0.8}>
+      <ParallaxLayer offset={2.99} speed={0.8}>
         <Contact />
       </ParallaxLayer>
     </Parallax>

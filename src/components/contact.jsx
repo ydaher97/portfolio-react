@@ -1,30 +1,51 @@
-import React , { useState } from 'react'
-
+import React , { useState ,useRef} from 'react'
+import emailjs from '@emailjs/browser';
 const Contact = () => {
 
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        message: ''
-      });
-    
-      const handleChange = (e) => {
-        setFormData({
-          ...formData,
-          [e.target.name]: e.target.value
+    const formRef = useRef()
+    const [error, setError] = useState(false)
+    const [success, setSuccess] = useState(false)
+
+
+    const sendEmail = (e) => {
+      e.preventDefault();
+  
+      emailjs.sendForm('service_uuilma2', 'template_0f5xisc', formRef.current, 'WukvygmnOA_oEYtb7')
+        .then((result) => {
+          
+          setSuccess(true);
+          console.log(success)
+        }, (error) => {
+          setError(true);
+          console.log(error)
+
         });
-      };
+    };
+    // const [formData, setFormData] = useState({
+    //     name: '',
+    //     email: '',
+    //     message: ''
+    //   });
     
-      const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log('Form data:', formData);
+    //   const handleChange = (e) => {
+    //     setFormData({
+    //       ...formData,
+    //       [e.target.name]: e.target.value
+    //     });
+    //   };
+    
+    //   const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     console.log('Form data:', formData);
         
-        setFormData({
-          name: '',
-          email: '',
-          message: ''
-        });
-      };
+    //     setFormData({
+    //       name: '',
+    //       email: '',
+    //       message: ''
+    //     });
+    //     value={formData.message}
+    //         onChange={handleChange}
+    //   };
   return (
     <section id='contact'>
       <div class="info-section">
@@ -38,7 +59,7 @@ const Contact = () => {
 
 
       <div>
-        <form className="contact-form" onSubmit={handleSubmit}>
+        <form ref={formRef} className="contact-form" onSubmit={sendEmail}>
         <h2>Contact Me</h2>
         <div className="form-group">
           <label htmlFor="name">Name:</label>
@@ -46,8 +67,7 @@ const Contact = () => {
             type="text"
             id="name"
             name="name"
-            value={formData.name}
-            onChange={handleChange}
+           
             required
           />
         </div>
@@ -57,8 +77,6 @@ const Contact = () => {
             type="email"
             id="email"
             name="email"
-            value={formData.email}
-            onChange={handleChange}
             required
           />
         </div>
@@ -67,12 +85,13 @@ const Contact = () => {
           <textarea
             id="message"
             name="message"
-            value={formData.message}
-            onChange={handleChange}
+            
             required
           ></textarea>
         </div>
-        <button type="submit">Submit</button>
+        <button className='submit' type="submit">Submit</button>
+        {error && "Error"}
+        {success && "Success"}
       </form>
       </div>
        
