@@ -1,7 +1,7 @@
 import React from 'react'
 import image from '../assets/profile.jpg'
 import 'animate.css';
-
+import DownloadButton from './DownloadButton'
 const Hero = () => {
 
   return (
@@ -26,6 +26,7 @@ const Hero = () => {
         </h1>
             <p class='animate__animated animate__bounce'>I Am Yazeed Daher a web devolper</p>
         </div>
+        <DownloadButton/>
     </section>
   )
 }
