@@ -11,6 +11,11 @@ import rolldice from '../assets/roll-dice.png'
 import mincraft from '../assets/mincraft.png'
 import flight from '../assets/Screenshot_1.png'
 import Ip from '../assets/ipv6.webp'
+import Travel from '../assets/Screenshot_2.png'
+import Volunteer from '../assets/Screenshot_3.png'
+import Bank from '../assets/Screenshot_4.png'
+
+
 
 
 
@@ -34,7 +39,7 @@ const Portfolio = () => {
     speed: 500,
     slidesToShow: 2,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 3000,
     pauseOnHover: true,
      prevArrow: <CustomPrevArrow />, 
@@ -55,6 +60,30 @@ const Portfolio = () => {
     <section id='portfolio'>
     <h1>My Portfolio</h1>
     <Slider {...settings}>
+    <div className='card-item'>
+        <PortfolioCard
+          imgSrc={Travel}
+          description="AI travel planner."
+          link="https://github.com/ydaher97/travelAi"
+          live="https://navigatenest-ai.vercel.app/"
+        />
+      </div>
+      <div className='card-item'>
+        <PortfolioCard
+          imgSrc={Volunteer}
+          description="Volunteer Platform."
+          link="https://github.com/ydaher97/volunteer-front"
+          live="https://volunteerus.netlify.app/"
+        />
+      </div>
+      <div className='card-item'>
+        <PortfolioCard
+          imgSrc={Bank}
+          description="Bank platform."
+          link="https://github.com/ydaher97/Bank-react"
+          live="https://bank-plat.netlify.app/"
+        />
+      </div>
       
       <div className='card-item'>
         <PortfolioCard

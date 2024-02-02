@@ -24,7 +24,7 @@ const Hero = () => {
           <span class="animate__animated animate__bounceInUp animate__delay-2s">D</span>
           <span class="animate__animated animate__zoomIn animate__delay-3s">!</span>
         </h1>
-            <p class='animate__animated animate__bounce'>I Am Yazeed Daher a web devolper</p>
+            <p class='animate__animated animate__bounce'>I Am Yazeed Daher a web deveolper</p>
         </div>
         <DownloadButton/>
     </section>

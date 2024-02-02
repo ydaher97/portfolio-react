@@ -508,7 +508,6 @@ section{
   background-color: var(--color-secondary);
   display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 
 }
@@ -520,7 +519,7 @@ section{
 }
 
 .portfolio-img {
-  width: 90%;
+  width: 100%;
   height: 58%;
   margin: 5px 0;
 
